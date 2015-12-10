@@ -52,10 +52,11 @@ make check
 %{_bindir}/protoc-c
 
 %files -n %{libname}
-%{_libdir}/libprotobuf-c.so.%{major}.*
+%{_libdir}/libprotobuf-c.so.%{major}*
 
 %files -n %{devname}
 %dir %{_includedir}/google
 %{_includedir}/google/protobuf-c
+%{_includedir}/protobuf-c/protobuf-c.h
 %{_libdir}/libprotobuf-c.so
 %{_libdir}/pkgconfig/libprotobuf-c.pc

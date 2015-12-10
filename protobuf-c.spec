@@ -2,17 +2,15 @@
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname -d %{name}
 
-Name:           protobuf-c
-Version:        0.15
-Release:        4
-Summary:        C bindings for Google's Protocol Buffers
-Group:          System/Libraries
-License:        ASL 2.0
-URL:            http://code.google.com/p/protobuf-c/
-Source0:        http://protobuf-c.googlecode.com/files/protobuf-c-%{version}.tar.gz
-Source1:        http://protobuf-c.googlecode.com/svn/tags/%{version}/LICENSE
-
-BuildRequires:  protobuf-devel
+Name:		protobuf-c
+Version:	1.1.1
+Release:	1
+Summary:	C bindings for Google's Protocol Buffers
+Group:		System/Libraries
+License:	ASL 2.0
+URL:		https://github.com/protobuf-c
+Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
+BuildRequires: 	pkgconfig(protobuf)
 
 %description
 Protocol Buffers are a way of encoding structured data in an efficient yet 
@@ -28,17 +26,16 @@ Group:		System/Libraries
 %description -n %{libname}
 This package contains protobuf-c libraries.
 
-%package -n	%{devname}
-Summary:        Protocol Buffers C headers and libraries
-Group:          Development/C
-Requires:       %{libname} = %{EVRD}
+%package -n %{devname}
+Summary:	Protocol Buffers C headers and libraries
+Group:		Development/C
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
 This package contains protobuf-c headers and libraries.
 
 %prep
 %setup -q
-cp %{SOURCE1} .
 
 %build
 %configure --disable-static
@@ -55,7 +52,7 @@ make check
 %{_bindir}/protoc-c
 
 %files -n %{libname}
-%{_libdir}/libprotobuf-c.so.*
+%{_libdir}/libprotobuf-c.so.%{major}.*
 
 %files -n %{devname}
 %dir %{_includedir}/google

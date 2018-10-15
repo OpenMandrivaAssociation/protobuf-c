@@ -50,6 +50,7 @@ make check
 %files
 %doc TODO LICENSE ChangeLog
 %{_bindir}/protoc-c
+%{_bindir}/protoc-gen-c
 
 %files -n %{libname}
 %{_libdir}/libprotobuf-c.so.%{major}*

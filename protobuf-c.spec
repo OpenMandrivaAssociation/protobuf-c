@@ -3,8 +3,8 @@
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
-Version:	1.1.1
-Release:	2
+Version:	1.3.0
+Release:	1
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0
@@ -35,17 +35,17 @@ Requires:	%{libname} = %{EVRD}
 This package contains protobuf-c headers and libraries.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure --disable-static
-%make
+%make_build
 
 %check
 make check
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc TODO LICENSE ChangeLog

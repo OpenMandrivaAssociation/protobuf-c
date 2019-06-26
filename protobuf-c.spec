@@ -3,7 +3,7 @@
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
-Version:	1.3.0
+Version:	1.3.2
 Release:	2
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries

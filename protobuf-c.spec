@@ -59,5 +59,6 @@ make check
 %dir %{_includedir}/google
 %{_includedir}/google/protobuf-c
 %{_includedir}/protobuf-c/protobuf-c.h
+%{_includedir}/protobuf-c/protobuf-c.proto
 %{_libdir}/libprotobuf-c.so
 %{_libdir}/pkgconfig/libprotobuf-c.pc

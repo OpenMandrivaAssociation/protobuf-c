@@ -3,7 +3,7 @@
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
-Version:	1.3.3
+Version:	1.4.0
 Release:	1
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
@@ -59,5 +59,6 @@ make check
 %dir %{_includedir}/google
 %{_includedir}/google/protobuf-c
 %{_includedir}/protobuf-c/protobuf-c.h
+%{_includedir}/protobuf-c/protobuf-c.proto
 %{_libdir}/libprotobuf-c.so
 %{_libdir}/pkgconfig/libprotobuf-c.pc

@@ -3,8 +3,8 @@
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
-Version:	1.4.0
-Release:	2
+Version:	1.4.1
+Release:	1
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0

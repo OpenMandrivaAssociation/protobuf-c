@@ -1,15 +1,21 @@
+%global optflags %{optflags} -DPROTOBUF_USE_DLLS
+
 %define major 1
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
 Version:	1.4.1
-Release:	3
+Release:	4
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0
 URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Patch0:		protobuf-c-c++17.patch
+Patch1:		protobuf-c-protobuf-22.1.patch
+BuildRequires:	cmake ninja
+BuildRequires:	cmake(absl)
 BuildRequires: 	pkgconfig(protobuf)
 
 %description
@@ -36,13 +42,10 @@ This package contains protobuf-c headers and libraries.
 
 %prep
 %autosetup -p1
+%configure
 
 %build
-%configure --disable-static
 %make_build
-
-%check
-make check
 
 %install
 %make_install

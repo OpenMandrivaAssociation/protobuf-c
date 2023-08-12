@@ -59,3 +59,20 @@ diff -up protobuf-c-1.4.1/protoc-c/c_service.h.omv~ protobuf-c-1.4.1/protoc-c/c_
  
  #undef GOOGLE_DISALLOW_EVIL_CONSTRUCTORS
  #define GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(TypeName) \
+diff -up protobuf-c-1.4.1/protoc-c/c_generator.cc.omv~ protobuf-c-1.4.1/protoc-c/c_generator.cc
+--- protobuf-c-1.4.1/protoc-c/c_generator.cc.omv~	2023-08-12 15:43:32.050134095 +0200
++++ protobuf-c-1.4.1/protoc-c/c_generator.cc	2023-08-12 15:44:35.157785910 +0200
+@@ -60,6 +60,12 @@
+ 
+ // Modified to implement C code by Dave Benson.
+ 
++#include <sstream>
++// Yes, this is evil. You're free to fix it. Please share the patch.
++#define private public
++#include <google/protobuf/descriptor.h>
++#undef private
++
+ #include <protoc-c/c_generator.h>
+ 
+ #include <memory>
+diff -up protobuf-c-1.4.1/protoc-c/c_helpers.h.omv~ protobuf-c-1.4.1/protoc-c/c_helpers.h

@@ -1,12 +1,14 @@
 %global optflags %{optflags} -DPROTOBUF_USE_DLLS
+%global build_ldflags %{build_ldflags} -Wl,--undefined-version
 
 %define major 1
-%define libname %mklibname %{name} %{major}
+%define oldlibname %mklibname %{name} 1
+%define libname %mklibname %{name}
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
 Version:	1.4.1
-Release:	10
+Release:	11
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0
@@ -29,6 +31,7 @@ It uses a modified version of protoc called protoc-c.
 %package -n %{libname}
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 This package contains protobuf-c libraries.

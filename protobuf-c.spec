@@ -55,7 +55,7 @@ This package contains protobuf-c headers and libraries.
 %make_install
 
 %files
-%doc TODO LICENSE ChangeLog
+%doc TODO LICENSE
 %{_bindir}/protoc-c
 %{_bindir}/protoc-gen-c
 

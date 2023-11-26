@@ -16,7 +16,7 @@ URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
 #Patch0:		protobuf-c-c++17.patch
 #Patch1:		protobuf-c-protobuf-22.1.patch
-Patch2:		protobuf-c-1.4.1-protobuf-23.0.patch
+#Patch2:		protobuf-c-1.4.1-protobuf-23.0.patch
 BuildRequires:	cmake ninja
 BuildRequires:	cmake(absl)
 BuildRequires: 	pkgconfig(protobuf)

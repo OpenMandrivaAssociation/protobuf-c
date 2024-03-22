@@ -7,19 +7,19 @@
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
-Version:	1.4.1
-Release:	12
+Version:	1.5.0
+Release:	1
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0
 URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
-Patch0:		protobuf-c-c++17.patch
-Patch1:		protobuf-c-protobuf-22.1.patch
-Patch2:		protobuf-c-1.4.1-protobuf-23.0.patch
+Patch0:		protobuf-c-c++20.patch
+Patch1:		https://github.com/protobuf-c/protobuf-c/pull/711.patch
 BuildRequires:	cmake ninja
 BuildRequires:	cmake(absl)
 BuildRequires: 	pkgconfig(protobuf)
+BuildRequires:	autoconf-archive
 
 %description
 Protocol Buffers are a way of encoding structured data in an efficient yet 
@@ -46,6 +46,8 @@ This package contains protobuf-c headers and libraries.
 
 %prep
 %autosetup -p1
+# Allow C++20 (needed for absl >= 202401)
+cp -f %{_datadir}/aclocal/ax_cxx_compile_stdcxx* m4/
 %configure
 
 %build
@@ -55,7 +57,7 @@ This package contains protobuf-c headers and libraries.
 %make_install
 
 %files
-%doc TODO LICENSE ChangeLog
+%doc TODO LICENSE
 %{_bindir}/protoc-c
 %{_bindir}/protoc-gen-c
 

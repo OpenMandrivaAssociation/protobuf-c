@@ -8,7 +8,7 @@
 
 Name:		protobuf-c
 Version:	1.5.0
-Release:	3
+Release:	4
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0

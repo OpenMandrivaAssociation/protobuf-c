@@ -15,6 +15,7 @@ License:	ASL 2.0
 URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		protobuf-c-c++20.patch
+Patch1:		https://github.com/protobuf-c/protobuf-c/pull/762.patch
 BuildRequires:	cmake ninja
 BuildRequires:	cmake(absl)
 BuildRequires: 	pkgconfig(protobuf)

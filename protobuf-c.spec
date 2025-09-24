@@ -7,15 +7,14 @@
 %define devname %mklibname -d %{name}
 
 Name:		protobuf-c
-Version:	1.5.1
-Release:	3
+Version:	1.5.2
+Release:	1
 Summary:	C bindings for Google's Protocol Buffers
 Group:		System/Libraries
 License:	ASL 2.0
 URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		protobuf-c-c++20.patch
-Patch1:		https://github.com/protobuf-c/protobuf-c/pull/762.patch
 BuildRequires:	cmake ninja
 BuildRequires:	cmake(absl)
 BuildRequires: 	pkgconfig(protobuf)

@@ -16,6 +16,7 @@ URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		protobuf-c-c++20.patch
 BuildRequires:	automake
+BuildRequires:  make
 BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	cmake ninja

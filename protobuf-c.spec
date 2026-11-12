@@ -15,6 +15,8 @@ License:	ASL 2.0
 URL:		https://github.com/protobuf-c
 Source0:	https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		protobuf-c-c++20.patch
+# FieldDescriptor::label() was removed in protobuf 34. PR 797.
+Patch1:		protobuf-c-1.5.2-protobuf34-label.patch
 BuildRequires:	automake
 BuildRequires:  make
 BuildRequires:	libtool-base
